@@ -16,19 +16,19 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-	@NotEmpty
-	@Size(min = 5)
+	@NotEmpty(message="{Size.Product.Brand}")
+	@Size(min = 5, message="{Size.Product.Name}")
     private String name;
 	
-	@NotEmpty
+	@NotEmpty(message ="{Size.Product.Brand}")
     private String brand;
     
-	@NotEmpty
-	@Size(min = 3)
+	@NotEmpty(message ="{Size.Product.Brand}")
+	@Size(min = 3, message ="{Size.Product.Madein}")
 	private String madein;
 
-	@NotNull
-	@Min(value = 1)
+	@NotNull(message = "Size.Product.Brand")
+	@Min(value = 1, message = "{Size.Product.Price}")
     private float price;
 
 	public Long getId() {

@@ -18,7 +18,7 @@
     <div align="center">
         <h1>Edit Product</h1>
         <br>
-        <form th:action="@{/save}" th:object="${product}" method="POST">
+        <form th:action="@{/edit}" th:object="${product}" method="POST">
             Product Id: <br>
             <input type="text" th:field="*{id}" readonly="readonly"><br>
             Name:<br>
