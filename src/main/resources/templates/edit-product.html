@@ -16,6 +16,18 @@
 
 <body>
     <div align="center">
+        <div> <a
+            onclick="document.forms['logoutform'].submit()"
+            class="nav-item nav-link"
+            >Logout</a
+          >
+    
+          <div>
+            Items In Cart
+            <span th:text="${cart.size()}"></span>
+          </div>
+    
+          <form id="logoutform" method="POST" action="/logout"></form></div>
         <h1>Edit Product</h1>
         <br>
         <form th:action="@{/edit}" th:object="${product}" method="POST">

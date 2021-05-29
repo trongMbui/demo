@@ -15,43 +15,48 @@ import org.hibernate.validator.constraints.Length;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    @Length(min = 5, message =  "*Your username must have at least 5 or more characters")
-    @NotEmpty(message = "*Please provide an username")
+    @Length(min = 5, message = "* Your username must have at least 5 characters")
+    @NotEmpty(message = "* Please provide a username")
     private String username;
 
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-
-    @Length(min = 5, message =  "*Your password must have at least 5 or more characters")
-    @NotEmpty(message = "*Please provide an username")
+    @Length(min = 5, message = "* Your password must have at least 5 characters")
+    @NotEmpty(message = "* Please provide a password")
     private String password;
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 
     @Transient
     private String passwordConfirm;
 
-	public String getPasswordConfirm() {
-		return this.passwordConfirm;
-	}
+    public Long getId() {
+        return this.id;
+    }
 
-	public void setPasswordConfirm(String passwordConfirm) {
-		this.passwordConfirm = passwordConfirm;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPasswordConfirm() {
+        return this.passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
 }

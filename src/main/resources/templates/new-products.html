@@ -11,8 +11,20 @@
 </head>
 
 <body>
+    <div> <a
+        onclick="document.forms['logoutform'].submit()"
+        class="nav-item nav-link"
+        >Logout</a
+      >
+
+      <div>
+        Items In Cart
+        <span th:text="${cart.size()}"></span>
+      </div>
+
+      <form id="logoutform" method="POST" action="/logout"></form></div>
     <h1>Create new product</h1>
-    <form th:action="@{/save}" th:object="${product}" method="post" class="form">
+    <form th:action="@{/save}"  method="post" class="form">
         <div class="form-group">
             Name:<br>
             <input class="form-control" type="text" th:field="*{name}">
